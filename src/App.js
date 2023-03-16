@@ -11,13 +11,6 @@ function App() {
 
   return (
     <div className="App">
-      {allpokemonDta.map((pokemonName, index) => (
-        <PokemonCard
-          name={pokemonName.name}
-          url={pokemonName.url}
-          key={index}
-        />
-      ))}
       <Suspense
         fallback={
           <div style={{ color: "#fff", fontSize: "2rem" }}>LOADING...</div>
@@ -25,6 +18,13 @@ function App() {
       >
         <SingleDataShow />
       </Suspense>
+      {allpokemonDta.map((pokemonName, index) => (
+        <PokemonCard
+          name={pokemonName.name}
+          url={pokemonName.url}
+          key={index}
+        />
+      ))}
     </div>
   );
 }
