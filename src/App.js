@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { Suspense, lazy } from "react";
+import { useContextPokemonData } from "./contextApi/pokemonApi";
+import PokemonCard from "./components/PokemonCard";
+const SingleDataShow = lazy(() => import("./components/SingleDataShow"));
 function App() {
+  const { allpokemonDta } = useContextPokemonData();
+
+  if (!allpokemonDta) {
+    return null;
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {allpokemonDta.map((pokemonName, index) => (
+        <PokemonCard
+          name={pokemonName.name}
+          url={pokemonName.url}
+          key={index}
+        />
+      ))}
+      <Suspense
+        fallback={
+          <div style={{ color: "#fff", fontSize: "2rem" }}>LOADING...</div>
+        }
+      >
+        <SingleDataShow />
+      </Suspense>
     </div>
   );
 }

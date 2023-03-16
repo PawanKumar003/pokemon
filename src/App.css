@@ -1,38 +1,72 @@
+body {
+  background: linear-gradient(
+    to left,
+    rgba(7, 27, 82, 1) 0%,
+    rgba(0, 128, 128, 1) 100%
+  );
+  font-family: "Ubuntu", sans-serif;
+}
 .App {
+  width: 100%;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mainDiv {
+  padding: 0rem 0.5rem;
+  background-color: #9eebcf;
+  text-align: center;
+  display: inline-block;
+  margin: 0.5rem;
+  box-shadow: 4px 4px 8px #0003;
+  border-width: 0.25rem;
+  border-radius: 0.5rem;
+  width: 20%;
+}
+.grow {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  transition: -webkit-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+}
+.grow:hover {
+  transform: scale(1.05);
+  transition: all 0.5s;
+}
+.dFlex {
+  border: 5px solid black;
+  height: 800px;
+  padding: 3rem;
+  margin-top: 1rem;
+}
+.f1 {
+  font-size: 3rem;
+}
+h1 {
+  font-weight: bold;
+  color: #0ccac4;
+  margin: 0.67em 0;
+}
+.tc {
+  text-align: center;
+}
+.p2 {
+  padding: 10px;
+}
+.inputCls {
+  padding: 16px;
+  background-color: #cdecff;
+  border: 2px solid green;
+  border-radius: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.loader-container {
+  text-align: center;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
 }
