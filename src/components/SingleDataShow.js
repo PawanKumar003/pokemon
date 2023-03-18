@@ -4,7 +4,7 @@ import { useContextPokemonData } from "../contextApi/pokemonApi";
 const SingleDataShow = () => {
   const { singlePokemonData } = useContextPokemonData();
 
-  if (singlePokemonData.length == 0) {
+  if (singlePokemonData.length === 0) {
     return null;
   }
 
