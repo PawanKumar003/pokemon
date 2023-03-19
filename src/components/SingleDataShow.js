@@ -14,9 +14,9 @@ const SingleDataShow = () => {
         <img
           alt={singlePokemonData.name}
           src={singlePokemonData.sprites?.front_default}
-          style={{ width: "150px" }}
+          className="w-150"
         />
-        <div style={{ textAlign: "left" }}>
+        <div className="text-start card-ditails">
           <h3>Name: {singlePokemonData.name.toUpperCase()}</h3>
           <p>
             <span style={{ fontWeight: "bold" }}>Weight:</span>

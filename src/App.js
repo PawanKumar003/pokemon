@@ -11,15 +11,11 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-        <Suspense
-          fallback={
-            <div style={{ color: "#fff", fontSize: "2rem" }}>LOADING...</div>
-          }
-        >
+      <h2>
+        <Suspense fallback={<div className="text-light">LOADING...</div>}>
           <SingleDataShow />
         </Suspense>
-      </div>
+      </h2>
       {allpokemonDta.map((pokemonName, index) => (
         <PokemonCard
           name={pokemonName.name}
