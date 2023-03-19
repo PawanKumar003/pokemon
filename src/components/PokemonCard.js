@@ -8,7 +8,7 @@ const PokemonCard = (props) => {
   return (
     <div className="mainDiv grow">
       <div>
-        <h3 id="nm" onClick={() => getUrl(url)} style={{ cursor: "pointer" }}>
+        <h3 onClick={() => getUrl(url)} style={{ cursor: "pointer" }}>
           {name.toUpperCase()}
         </h3>
       </div>

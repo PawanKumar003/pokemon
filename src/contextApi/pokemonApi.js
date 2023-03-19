@@ -12,11 +12,9 @@ const initialVal = {
 const PokemonDataProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialVal);
 
-  console.log("state ; ", state);
-
   const callApiData = async () => {
     const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=20`);
-    dispatch({ type: "HELLO", payload: res.data.results });
+    dispatch({ type: "GET_API_DATA", payload: res.data.results });
   };
 
   const getUrl = (url) => {

@@ -12,17 +12,18 @@ const SingleDataShow = () => {
     <div className="mainDiv grow">
       <div>
         <img
+          alt={singlePokemonData.name}
           src={singlePokemonData.sprites?.front_default}
           style={{ width: "150px" }}
         />
         <div style={{ textAlign: "left" }}>
-          <h3 id="nm">Name: {singlePokemonData.name.toUpperCase()}</h3>
+          <h3>Name: {singlePokemonData.name.toUpperCase()}</h3>
           <p>
-            <span style={{ fontWeight: "bold" }}>Weight:</span>{" "}
+            <span style={{ fontWeight: "bold" }}>Weight:</span>
             {singlePokemonData.weight} Kg
           </p>
           <p>
-            <span style={{ fontWeight: "bold" }}>Weight:</span>{" "}
+            <span style={{ fontWeight: "bold" }}>Weight:</span>
             {singlePokemonData.weight} Kg
           </p>
           <p>
